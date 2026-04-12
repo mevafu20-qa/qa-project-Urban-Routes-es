@@ -1,0 +1,85 @@
+                            Urban Routes Automation Project
+
+Descripción del proyecto
+
+Este proyecto contiene pruebas automatizadas para la aplicación web,
+simulando el flujo completo de solicitud de un taxi.
+
+El test automatiza las siguientes acciones:
+
+* Ingreso de direcciones de origen y destino
+* Selección del tipo de servicio (Comfort)
+* Registro y confirmación de número telefónico
+* Agregado de método de pago (tarjeta)
+* Comentario para el conductor
+* Selección de extras (como 2 de helados, pañuelos y manta)
+* Confirmación del pedido
+* Validación del inicio del temporizador del viaje
+* Por ultimo, verificación del pedido del taxi donde se visualiza minutos que tarda en llegar
+
+---
+
+Tecnologías
+
+* Python 3
+* Selenium WebDriver
+* Google Chrome + ChromeDriver
+* PyCharm (IDE)
+
+Técnicas de automatización
+
+* Uso de **Page Object Model (POM)** para organizar el código
+* Implementación de **WebDriverWait (esperas explícitas)** para mayor estabilidad
+* Simulación de escritura humana (`slow_type`)
+* Uso de **JavaScript Executor** para interactuar con elementos complejos
+
+---
+
+Proceso para ejecutar las pruebas
+
+1. Clonar el repositorio
+
+```bash
+ git clone git@github.com:mevafu20-qa/qa-project-Urban-Routes-es.git
+
+---
+
+2. Instalar dependencias
+
+Tener Python instalado, luego ejecuta:
+
+```bash
+pip install selenium
+
+---
+
+3. Ejecutar el test
+
+Desde la terminal o desde PyCharm
+
+---
+
+Requisitos:
+
+* Tener Google Chrome instalado
+* Tener el ChromeDriver compatible con tu versión de Chrome
+* Conexión a internet para acceder a la aplicación Urban Routes
+
+---
+
+Estructura del proyecto
+
+qa-project-Urban-Routes-es/
+│
+├── main.py        Script principal con pruebas automatizadas
+├── data.py        Datos de prueba (direcciones, teléfono, tarjeta, etc.)
+└── README.md      Documentación del proyecto
+
+---
+
+Notas adicionales
+
+* Puede requerir ajustes si la UI de la aplicación cambia
+* Algunas esperas (`time.sleep`) se utilizan para simular comportamiento humano
+
+---
