@@ -1,6 +1,5 @@
 import data
 import time
-import re
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -221,7 +220,7 @@ class UrbanRoutesPage:
 
             time.sleep(0.5)
 
-        print("⏳ Manteniendo la página abierta unos momentos mas")
+        print("⏳ Manteniendo la página abierta un rato mas")
         time.sleep(40)
 
 
