@@ -1,85 +1,112 @@
-                            Urban Routes Automation Project
+                               Urban Routes Automation Project
 
-Descripción del proyecto
+ Descripción del Proyecto
 
-Este proyecto contiene pruebas automatizadas para la aplicación web,
-simulando el flujo completo de solicitud de un taxi.
+Este proyecto consiste en la automatización del flujo de solicitud de un taxi
+en la plataforma Urban Routes, utilizando Selenium WebDriver y Pytest.
 
-El test automatiza las siguientes acciones:
+El objetivo principal es validar que un usuario puede completar exitosamente todo el proceso:
 
-* Ingreso de direcciones de origen y destino
-* Selección del tipo de servicio (Comfort)
-* Registro y confirmación de número telefónico
-* Agregado de método de pago (tarjeta)
-* Comentario para el conductor
-* Selección de extras (como 2 de helados, pañuelos y manta)
-* Confirmación del pedido
-* Validación del inicio del temporizador del viaje
-* Por ultimo, verificación del pedido del taxi donde se visualiza minutos que tarda en llegar
+1. Ingresar direcciones de origen y destino
+2. Solicitar un taxi
+3. Seleccionar tarifa (ej: comfort)
+4. Registrar número de teléfono
+5. Confirmar código SMS
+6. Agregar método de pago
+7. Ingresar comentario para el conductor
+8. Seleccionar extras (ej: 2 helados, pañuelos y manta)
+9. Confirmar la solicitud
+10. Esperar asignación de conductor
 
 ---
 
-Tecnologías
+ Estructura del Proyecto
+
+```
+├── data.py        # Datos de prueba (inputs)
+├── helpers.py     # Funciones auxiliares (ej: obtener código SMS)
+├── pages.py       # Page Object Model (interacciones UI)
+└── main.py        # Tests con pytest (flujo completo dividido)
+```
+
+---
+
+ Tecnologías Utilizadas
 
 * Python 3
 * Selenium WebDriver
-* Google Chrome + ChromeDriver
-* PyCharm (IDE)
-
-Técnicas de automatización
-
-* Uso de **Page Object Model (POM)** para organizar el código
-* Implementación de **WebDriverWait (esperas explícitas)** para mayor estabilidad
-* Simulación de escritura humana (`slow_type`)
-* Uso de **JavaScript Executor** para interactuar con elementos complejos
+* Pytest
+* ChromeDriver
+* Page Object Model (POM)
 
 ---
 
-Proceso para ejecutar las pruebas
+ Técnicas Implementadas
+
+✅ Automatización
+✅ Page Object Model (POM)
+✅ Tests encadenados con estado compartido
+✅ Manejo de elementos dinámicos
+✅ Esperas explícitas (`WebDriverWait`)
+✅ Manejo de overlays (bloqueo de clicks)
+✅ Captura de código SMS desde logs del navegador
+✅ Validaciones reales de UI (assertions)
+
+---
+
+ Instalación y Configuración
 
 1. Clonar el repositorio
 
 ```bash
  git clone git@github.com:mevafu20-qa/qa-project-Urban-Routes-es.git
+```
 
----
-
-2. Instalar dependencias
-
-Tener Python instalado, luego ejecuta:
+2. Instalar paquetes
 
 ```bash
-pip install selenium
+pip install selenium pytest webdriver-manager
+```
 
 ---
 
-3. Ejecutar el test
+▶️ Ejecución de Pruebas
 
-Desde la terminal o desde PyCharm
+Ejecuta los tests con:
 
----
-
-Requisitos:
-
-* Tener Google Chrome instalado
-* Tener el ChromeDriver compatible con tu versión de Chrome
-* Conexión a internet para acceder a la aplicación Urban Routes
+```bash
+pytest main.py -v -s
+```
 
 ---
 
-Estructura del proyecto
+Flujo Automatizado
 
-qa-project-Urban-Routes-es/
-│
-├── main.py        Script principal con pruebas automatizadas
-├── data.py        Datos de prueba (direcciones, teléfono, tarjeta, etc.)
-└── README.md      Documentación del proyecto
+Durante la ejecución:
+
+* Se abre el navegador automáticamente
+* Se ejecutan los 7 tests en orden
+* Se completa el flujo completo de solicitud de taxi
+* Se espera dinámicamente:
+
+  * 🔍 "Buscar automóvil"
+  * ⏱ Cambio del contador
+  * 🚗 "El conductor llegará en X min"
+* Se espera 10 segundos finales
+* Se cierra el navegador
 
 ---
 
-Notas adicionales
+Este proyecto se enfoca en habilidades de:
 
-* Puede requerir ajustes si la UI de la aplicación cambia
-* Algunas esperas (`time.sleep`) se utilizan para simular comportamiento humano
+* Automatización de pruebas UI
+* Diseño de frameworks de testing
+* Resolución de problemas reales en Selenium
+
+---
+
+‍💻 Autor
+
+Q.A Junior Mery Fuentes
 
 ---
